@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+    <div class="container mt-4">
+        <h3 class="text-center">REGISTRATION</h3>
+
+        <h5>Personal Info</h5>
+        <div class="row">
+            <div class="col-md-6 mb-2">
+                <input type="text" class="form-control" placeholder="Enter Full Name">
+            </div>
+            <div class="col-md-6 mb-2">
+                <input type="text" class="form-control" placeholder="Enter Nick Name">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-2">
+                <input type="text" class="form-control" placeholder="Enter Institute Name">
+            </div>
+            <div class="col-md-6 mb-2">
+                <input type="text" class="form-control" placeholder="Enter Department">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-2">
+                <input type="number" class="form-control" placeholder="HSC Passing Year">
+            </div>
+            <div class="col-md-6 mb-2">
+                <select class="form-select">
+                    <option selected>--Select Religion--</option>
+                    <option>Islam</option>
+                    <option>Hinduism</option>
+                    <option>Buddhism</option>
+                    <option>Christianity</option>
+                </select>
+            </div>
+        </div>
+
+        <h5>Contact Info</h5>
+        <div class="row">
+            <div class="col-md-6 mb-2">
+                <input type="tel" class="form-control" placeholder="Enter Mobile Number 1">
+            </div>
+            <div class="col-md-6 mb-2">
+                <input type="tel" class="form-control" placeholder="Enter Mobile Number 2 (Optional)">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-2">
+                <input type="email" class="form-control" placeholder="Enter Email">
+            </div>
+            <div class="col-md-6 mb-2">
+                <input type="text" class="form-control" placeholder="Enter Facebook ID (Optional)">
+            </div>
+        </div>
+
+        <h5>Teacher Activity</h5>
+        <div class="row">
+            <div class="col-md-6 mb-2">
+                <select class="form-select teacher-activity">
+                    <option selected>--Choice 1--</option>
+                    <option>Teaching</option>
+                    <option value="scripts">Scripts Evaluation</option>
+                    <option>Materials Development
+                    </option>
+                    <option>Question & Answer
+                    </option>
+                </select>
+            </div>
+            <div class="col-md-6 mb-2">
+                <select class="form-select teacher-activity">
+                    <option selected>--Choice 2--</option>
+                    <option>Teaching</option>
+                    <option value="scripts">Scripts Evaluation</option>
+                    <option>Materials Development
+                    </option>
+                    <option>Question & Answer
+                    </option>
+                </select>
+            </div>
+            <div class="col-md-6 mb-2">
+                <select class="form-select teacher-activity">
+                    <option selected>--Choice 3--</option>
+                    <option>Teaching</option>
+                    <option value="scripts">Scripts Evaluation</option>
+                    <option>Materials Development
+                    </option>
+                    <option>Question & Answer
+                    </option>
+                </select>
+            </div>
+            <div class="col-md-6 mb-2">
+                <select class="form-select teacher-activity">
+                    <option selected>--Choice 4--</option>
+                    <option>Teaching</option>
+                    <option value="scripts">Scripts Evaluation</option>
+                    <option>Materials Development
+                    </option>
+                    <option>Question & Answer
+                    </option>
+                </select>
+            </div>
+        </div>
+        <h5>Are you an academic student of Udvash?</h5>
+        <div class="mb-2">
+            <input type="radio" name="udvash" value="yes"> Yes
+            <input type="radio" name="udvash" value="no" checked> No
+        </div>
+
+        <h5>Why you would like to join our team?</h5>
+        <textarea class="form-control" placeholder="Write your reason..."></textarea>
+
+        <script>
+            function checkForScriptsEvaluation() {
+                var selects = document.querySelectorAll(".teacher-activity");
+                var extraForm = document.getElementById("extraForm");
+                var showForm = false;
+
+                selects.forEach(select => {
+                    if (select.value === "scripts") {
+                        showForm = true;
+                    }
+                });
+
+                extraForm.style.display = showForm ? "block" : "none";
+            }
+
+            document.querySelectorAll(".teacher-activity").forEach(select => {
+                select.addEventListener("change", checkForScriptsEvaluation);
+            });
+        </script>
+
+
+        <!-- Hidden Form (Now placed below the activity section) -->
+        <div id="extraForm" style="display: none;">
+            <h5>Extra Info for Scripts Evaluation</h5>
+            <h5>Others Info</h5>
+            <div class="row">
+                <div class="col-md-6 mb-2">
+                    <input type="text" class="form-control" placeholder="Enter Full Name">
+                </div>
+                <div class="col-md-6 mb-2">
+                    <input type="text" class="form-control" placeholder="Enter Nick Name">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-2">
+                    <input type="text" class="form-control" placeholder="Enter Institute Name">
+                </div>
+                <div class="col-md-6 mb-2">
+                    <input type="text" class="form-control" placeholder="Enter Department">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-2">
+                    <input type="number" class="form-control" placeholder="HSC Passing Year">
+                </div>
+                <div class="col-md-6 mb-2">
+                    <select class="form-select">
+                        <option selected>--Select Religion--</option>
+                        <option>Islam</option>
+                        <option>Hinduism</option>
+                        <option>Buddhism</option>
+                        <option>Christianity</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <button class="btn-submit mt-3">Submit</button>
+    </div>
+</body>
+
+</html>
